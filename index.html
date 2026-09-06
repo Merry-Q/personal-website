@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="张嘉琪的个人专辑：AI 产品经理作品集、经历与真实音乐播放器。" />
+    <meta name="theme-color" content="#112d18" />
+    <link rel="icon" href="data:," />
+    <title>ROOTED / 张嘉琪的个人专辑</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <canvas id="root-canvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="monogram" href="#album" aria-label="回到专辑首页">JQ</a>
+      <p><strong>ROOTED</strong><span>张嘉琪的个人专辑</span></p>
+      <nav aria-label="主导航">
+        <a href="#tracks">曲目</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button class="sound-pill" id="sound-pill" type="button" aria-label="显示播放列表" aria-expanded="false">
+        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>播放列表</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="album-hero" id="album">
+        <div class="album-copy">
+          <p class="catalog">JQ · 001 / AI PRODUCT MANAGER</p>
+          <h1>ROOTED</h1>
+          <p class="album-subtitle">把复杂问题，长成清晰产品。</p>
+          <div class="album-info">
+            <div><span>ARTIST</span><strong>张嘉琪</strong></div>
+            <div><span>GENRE</span><strong>AI 产品 · 用户体验</strong></div>
+            <div><span>BASED IN</span><strong>北京</strong></div>
+            <div><span>EDITION</span><strong>2002 · 10</strong></div>
+          </div>
+          <p class="album-intro">
+            通信工程硕士、人工智能背景的产品经理。从真实场景出发，
+            把用户需求、业务目标与 AI 能力组织成可落地、可解释、可验证的体验。
+          </p>
+          <div class="hero-actions">
+            <button class="root-button" id="hero-play" type="button">
+              <span class="button-icon" aria-hidden="true">▶</span>
+              <span class="button-label">播放专辑</span>
+            </button>
+            <a class="text-button" href="./张嘉琪个人简历.docx" download>下载专辑内页（简历） ↗</a>
+          </div>
+        </div>
+
+        <div class="turntable-wrap" aria-label="ROOTED 专辑黑胶唱片">
+          <div class="sleeve">
+            <img src="./images/me.png" alt="ROOTED 个人专辑封面" />
+            <div class="sleeve-type"><span>ROOTED</span><small>JIAQI ZHANG · 2026</small></div>
+          </div>
+          <div class="turntable" id="turntable">
+            <div class="vinyl" id="vinyl">
+              <div class="vinyl-shine"></div>
+              <div class="vinyl-label">
+                <img src="./images/me.png" alt="" />
+                <span></span>
+              </div>
+            </div>
+            <div class="tonearm" id="tonearm" aria-hidden="true">
+              <div class="pivot">
+                <i class="pivot-ring"></i>
+                <i class="pivot-cap"></i>
+              </div>
+              <i class="counterweight"></i>
+              <i class="pivot-collar"></i>
+              <svg class="arm-tube" viewBox="0 0 90 470" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="arm-metal" x1="0" x2="1">
+                    <stop offset="0" stop-color="#323330" />
+                    <stop offset=".22" stop-color="#a9aaa5" />
+                    <stop offset=".48" stop-color="#f2f2ec" />
+                    <stop offset=".72" stop-color="#868782" />
+                    <stop offset="1" stop-color="#252623" />
+                  </linearGradient>
+                </defs>
+                <path d="M61 0 L61 356 C61 408 52 432 18 459" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="12" transform="translate(5 7)" />
+                <path d="M61 0 L61 356 C61 408 52 432 18 459" fill="none" stroke="url(#arm-metal)" stroke-width="8" stroke-linecap="round" />
+                <path d="M59 5 L59 354 C59 403 50 426 20 451" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.2" stroke-linecap="round" />
+              </svg>
+              <div class="headshell">
+                <i class="cartridge"></i>
+                <i class="stylus"></i>
+              </div>
+            </div>
+          </div>
+          <p class="drag-hint">拖动唱片 · 改变转速</p>
+        </div>
+        <a class="scroll-note" href="#tracks"><span>PLAY THE STORY</span><i></i></a>
+      </section>
+
+      <section class="track-section" id="tracks">
+        <header class="section-title">
+          <p>SELECTED WORK / 精选项目</p>
+          <h2>先看产品，<br />再听完整故事。</h2>
+          <span>06 个项目 · 悬浮目录查看真实 Demo</span>
+        </header>
+
+        <div class="track-layout">
+          <ol class="track-list" id="story-tracks">
+            <li class="active">
+              <button type="button" data-track="0">
+                <span class="track-no">01</span>
+                <span class="track-name"><strong>OfferOS</strong><small>AI 求职决策 · 独立产品</small></span>
+                <span class="track-type">PROJECT</span><time>04:12</time>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-track="1">
+                <span class="track-no">02</span>
+                <span class="track-name"><strong>PaperMind</strong><small>RAG 学术速读与综述</small></span>
+                <span class="track-type">PROJECT</span><time>03:48</time>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-track="2">
+                <span class="track-no">03</span>
+                <span class="track-name"><strong>宝宝成长相册</strong><small>家庭私密成长记录</small></span>
+                <span class="track-type">PROJECT</span><time>04:05</time>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-track="3">
+                <span class="track-no">04</span>
+                <span class="track-name"><strong>情绪档案馆</strong><small>垂直人群机会研究</small></span>
+                <span class="track-type">RESEARCH</span><time>03:16</time>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-track="4">
+                <span class="track-no">05</span>
+                <span class="track-name"><strong>自媒体 AI 工作台</strong><small>创作者全流程工作空间</small></span>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-track="5">
+                <span class="track-no">06</span>
+                <span class="track-name"><strong>桌面便签板</strong><small>Windows 桌面效率工具</small></span>
+                <span class="track-play">▶</span>
+              </button>
+            </li>
+          </ol>
+
+          <article class="track-notes" id="track-notes" aria-live="polite">
+            <div class="note-top"><span>TRACK 01</span><span>SIDE A</span></div>
+            <div class="note-actions note-actions-top">
+              <button class="booklet-trigger" type="button" data-booklet="0"><span>打开项目歌词本</span><i>↗</i></button>
+              <a class="booklet-trigger" href="http://123.56.217.207/" target="_blank" rel="noopener noreferrer"><span>访问线上版本</span><i>↗</i></a>
+            </div>
+            <div class="project-stage is-offer" aria-label="OfferOS 产品效果预览">
+              <div class="stage-window image-window">
+                <div class="stage-chrome"><i></i><i></i><i></i><span>OfferOS · 岗位行动报告</span></div>
+                <img src="./images/demo/offeros-demo.png" alt="OfferOS 岗位分析真实 Demo 界面" />
+              </div>
+              <div class="stage-caption"><span>LIVE PRODUCT CAPTURE</span><strong>真实 Demo · 决策 → 证据 → 行动</strong></div>
+            </div>
+            <h3>OfferOS</h3>
+            <p class="track-hook">把“我适不适合这个岗位”，变成可解释、可行动的决策。</p>
+            <p class="track-description">
+              从简历解析、JD 解码、三维评分到六模块行动报告，独立完成 PRD、产品设计、
+              多 Agent 职责边界与云服务器上线。
+            </p>
+            <div class="credit-grid">
+              <div><span>ROLE</span><strong>独立产品设计与落地</strong></div>
+              <div><span>METHOD</span><strong>多 Agent / 可解释评分</strong></div>
+              <div><span>OUTPUT</span><strong>0 → 1 上线</strong></div>
+            </div>
+            <div class="workflow-strip" aria-label="项目工作流程"><span>问题定义</span><i></i><span>规则与 Agent</span><i></i><span>原型验证</span><i></i><span>部署上线</span></div>
+            <div class="lyric-line"><i></i><span>“硬门槛独立校正，不让加权平均掩盖关键风险。”</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="catalog">BONUS TRACK / STAY CONNECTED</p>
+        <h2>下一首，<br />可以一起完成。</h2>
+        <a href="mailto:zjqi106427@163.com">zjqi106427@163.com <span>↗</span></a>
+        <footer><span>© 2026 张嘉琪</span><span>ROOTED · JQ 001</span><a href="#album">回到 A 面 ↑</a></footer>
+      </section>
+    </main>
+
+    <aside class="player" id="player" aria-label="本地音乐播放器">
+      <audio id="audio" preload="metadata"></audio>
+      <div class="now-playing">
+        <div class="mini-record" aria-hidden="true"><img src="./images/me.png" alt="" /></div>
+        <div>
+          <span>NOW PLAYING</span>
+          <strong id="audio-title">准备播放</strong>
+          <small id="audio-artist">ROOTED · JQ 001</small>
+        </div>
+      </div>
+      <div class="transport">
+        <button id="previous" type="button" aria-label="上一首">‹</button>
+        <button class="main-play" id="play" type="button" aria-label="播放">▶</button>
+        <button id="next" type="button" aria-label="下一首">›</button>
+      </div>
+      <div class="timeline-control">
+        <span id="current-time">0:00</span>
+        <label class="range-wrap" aria-label="播放进度">
+          <input id="seek" type="range" min="0" max="100" value="0" step="0.1" />
+          <i id="seek-fill"></i>
+        </label>
+        <span id="duration">0:00</span>
+      </div>
+      <div class="volume-control">
+        <button id="volume-icon" type="button" aria-label="静音">◖</button>
+        <label class="volume-range" aria-label="音量">
+          <input id="volume" type="range" min="0" max="1" value="0.8" step="0.01" />
+        </label>
+      </div>
+      <button class="playlist-toggle" id="playlist-toggle" type="button" aria-expanded="false" aria-controls="playlist-panel">
+        <span>☷</span> 播放列表
+      </button>
+    </aside>
+
+    <aside class="playlist-panel" id="playlist-panel" aria-hidden="true" aria-label="ROOTED 播放列表">
+      <header>
+        <div><span>ROOTED · JQ 001</span><strong>播放列表</strong></div>
+        <button id="playlist-close" type="button" aria-label="关闭播放列表">×</button>
+      </header>
+      <ol id="audio-playlist"></ol>
+      <footer><span id="playlist-count">0 TRACKS</span><span>MUSIC / MP3</span></footer>
+    </aside>
+    <button class="playlist-backdrop" id="playlist-backdrop" type="button" aria-label="关闭播放列表" tabindex="-1"></button>
+
+    <dialog class="booklet-dialog" id="booklet-dialog" aria-labelledby="booklet-title">
+      <div class="booklet-shell">
+        <header class="booklet-header">
+          <div><span id="booklet-catalog">PROJECT BOOKLET · JQ 001</span><strong id="booklet-title">OfferOS</strong></div>
+          <button id="booklet-close" type="button" aria-label="关闭项目歌词本">×</button>
+        </header>
+        <div class="booklet-spread" id="booklet-spread">
+          <article class="booklet-page booklet-page-left" id="booklet-left"></article>
+          <article class="booklet-page booklet-page-right" id="booklet-right"></article>
+        </div>
+        <footer class="booklet-footer">
+          <div class="booklet-dots" id="booklet-dots" aria-label="歌词本章节"></div>
+          <div class="booklet-controls">
+            <button id="booklet-prev" type="button">← 上一页</button>
+            <span id="booklet-page-number">01 / 04</span>
+            <button id="booklet-next" type="button">下一页 →</button>
+          </div>
+        </footer>
+      </div>
+    </dialog>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
