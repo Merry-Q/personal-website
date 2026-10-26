@@ -13,7 +13,7 @@
     "thinking": "当前源码采用知识技能、经验、能力、个性四维评分，硬门槛独立警示；旧主页三维权重已不再适用。",
     "limits": "公开入口是虚构人物演示。真实 LLM、截图解析和外部背调依赖服务；本轮不以模拟结果认定真实 AI 能力已验收。",
     "service": "offeros",
-    "url": "http://47.237.109.221/",
+    "url": "https://offeros.47.237.109.221.sslip.io/",
     "case": "/offerOS/",
     "github": "https://github.com/Merry-Q/offerOS",
     "image": "offeros-demo.png",

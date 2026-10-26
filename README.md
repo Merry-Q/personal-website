@@ -57,6 +57,6 @@ node personal-website/verify-local.mjs
 
 本次项目删除清单与验证记录见 `docs/portfolio-update-2026-10-26/`；`docs/portfolio-audit-2026-10-10/` 是历史验收记录，不代表当前目录或分类。根目录 `local-*-fix.py`、`local-*-edit.py` 等是上轮一次性迁移脚本，勿重复执行。
 
-仓库：https://github.com/Merry-Q/personal-website 。在线入口：https://home.47.237.109.221.sslip.io/ 。OfferOS 仍占用服务器 IP 根路径 `http://47.237.109.221/`，本站按主机名分流，不替换现有产品。
+仓库：https://github.com/Merry-Q/personal-website 。在线入口：http://47.237.109.221/ 。原先的 `https://home.47.237.109.221.sslip.io/` 会跳到 IP 根路径。OfferOS 在 `https://offeros.47.237.109.221.sslip.io/`。
 
 构建静态包后，把 `dist/` 同步到服务器 `/opt/1panel/apps/openresty/openresty/www/personal-website`，并将 `deploy/home.nginx.conf` 放到 OpenResty `conf.d/home.conf` 后重载。证书与相册、PaperMind 一样走 Let's Encrypt webroot，续期沿用 `papermind-cert-renew.timer`。

@@ -6,7 +6,7 @@
 
 ## 在线访问
 
-已部署至阿里云 ECS：用户端 http://47.237.109.221/ ，管理端 http://47.237.109.221/admin/login 。运行、更新与备份见 [阿里云部署说明](deploy/aliyun.md)。当前使用 HTTP；正式收集真实简历前应配置 HTTPS。
+已部署至阿里云 ECS：用户端 https://offeros.47.237.109.221.sslip.io/ ，管理端 https://offeros.47.237.109.221.sslip.io/admin/login 。运行、更新与备份见 [阿里云部署说明](deploy/aliyun.md)。该域名由 sslip.io 将服务器 IP 映射成可签发证书的主机名。
 
 `/login` 与 `/register` 会跳转到产品 Demo。
 
