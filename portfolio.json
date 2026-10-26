@@ -1,0 +1,291 @@
+[
+  {
+    "id": "offeros",
+    "name": "OfferOS",
+    "group": "built",
+    "status": "已实现应用 · 本轮仅验证规则／模拟模式",
+    "summary": "将简历与岗位要求，整理成可解释的求职行动建议。",
+    "audience": "需要判断投递优先级的求职者",
+    "problem": "匹配分数缺少证据，报告与实际准备脱节。",
+    "value": "围绕画像、岗位解析、匹配与行动建议设计连续决策链路。",
+    "flow": "简历／JD → 解析 → 四维匹配 → 行动报告／历史",
+    "output": "岗位分析与准备建议；本轮为规则／模拟结果",
+    "thinking": "当前源码采用知识技能、经验、能力、个性四维评分，硬门槛独立警示；旧主页三维权重已不再适用。",
+    "limits": "公开入口是虚构人物演示。真实 LLM、截图解析和外部背调依赖服务；本轮不以模拟结果认定真实 AI 能力已验收。",
+    "service": "offeros",
+    "url": "http://47.237.109.221/",
+    "case": "/offerOS/",
+    "github": "https://github.com/Merry-Q/offerOS",
+    "image": "offeros-demo.png",
+    "docs": [
+      [
+        "README 与当前架构",
+        "offerOS/README.md"
+      ]
+    ]
+  },
+  {
+    "id": "paper",
+    "name": "PaperMind",
+    "group": "built",
+    "status": "专业 PDF 阅读工作台 · 已有应用实现",
+    "summary": "把专业 PDF 转为可回查来源的交互讲解，在阅读中补充知识。",
+    "audience": "硕博研究生与科研助理",
+    "problem": "文献信息混淆，综述易退化成摘要堆砌。",
+    "value": "连接整篇讲解、原文引用、图表提问与个人概念库，让理解过程可以继续深入和回看。",
+    "flow": "导入 PDF → 生成交互讲解 → 回查原文／继续提问 → 保存概念／补充页面",
+    "output": "交互阅读页面、来源引用、连续对话与个人概念库",
+    "thinking": "以完整主线和来源回查支撑理解；页面补充与概念保存由用户分别确认，不用测验分数代替理解。",
+    "limits": "当前为共享单用户工作台，尚无账号或多人隔离；新生成、OCR 和 Copilot 依赖千问与模型权限，可能产生费用。体验地址来自现有 README，本轮未复验在线服务。",
+    "docs": [
+      [
+        "当前项目说明",
+        "paperMind/README.md"
+      ],
+      [
+        "产品定位与设计原则",
+        "paperMind/PRODUCT.md"
+      ],
+      [
+        "实现边界报告",
+        "paperMind/docs/LIVE-BOUNDARY-REPORT.md"
+      ]
+    ],
+    "url": "https://papermind.47.237.109.221.sslip.io/",
+    "case": "/paperMind/",
+    "github": "https://github.com/Merry-Q/papermind"
+  },
+  {
+    "id": "baby",
+    "name": "宝宝成长相册",
+    "group": "built",
+    "status": "已实现全栈代码 · 服务依赖未验收",
+    "summary": "将散落的成长照片，组织成家人共写的私密时间轴。",
+    "audience": "需要共同记录宝宝成长的家庭",
+    "problem": "照片散落在聊天中，记录和访问权限缺乏统一管理。",
+    "value": "以记录和家庭角色为核心，设计上传、时间轴和邀请流程。",
+    "flow": "建立家庭 → 上传照片和记录 → 时间轴查看 → 家庭协作",
+    "output": "成长记录与相册；真实上传依赖数据库和对象存储",
+    "thinking": "家庭协作与单人本地预览是不同能力；不把示例家庭或本地回退视为已验证的权限隔离。",
+    "limits": "完整闭环依赖 PostgreSQL 和私有 OSS；本轮不连接远程数据库或云存储。本地示例可浏览。",
+    "service": "baby",
+    "url": "https://album.47.237.109.221.sslip.io/",
+    "case": "/宝宝相册/",
+    "github": "https://github.com/Merry-Q/babygrowth-album",
+    "image": "baby-album-demo.png",
+    "docs": [
+      [
+        "项目说明与配置",
+        "宝宝相册/README.md"
+      ],
+      [
+        "PRD（PDF）",
+        "宝宝相册/成长相册 产品需求文档 (PRD).pdf"
+      ]
+    ]
+  },
+  {
+    "id": "sticky",
+    "name": "桌面便签板",
+    "group": "built",
+    "status": "Windows 应用已实现 · 原生流程待验收",
+    "summary": "把瞬间想到的事，留在每天都会看见的桌面上。",
+    "audience": "Windows 桌面轻量记录用户",
+    "problem": "打开大型笔记工具会打断当前工作。",
+    "value": "悬浮入口、便签编辑与本地文件持久化。",
+    "flow": "唤起 → 输入 → 贴到桌面 → 编辑／恢复",
+    "output": "桌面便签；已有 Electron 源码与可执行产物",
+    "thinking": "减少记录步骤，同时避免 Enter 把尚未写完的多行内容提前提交。",
+    "limits": "不是网页应用；本轮环境无法完整操作原生窗口验证。查看详情中的本地启动说明，不提供伪造网页体验入口。",
+    "command": "cd '桌面便签板/app'; npm start",
+    "download": "https://github.com/Merry-Q/desktop-sticky-board/releases",
+    "case": "/桌面便签板/",
+    "github": "https://github.com/Merry-Q/desktop-sticky-board",
+    "image": "desktop-sticky-demo.png",
+    "docs": []
+  },
+  {
+    "id": "creator",
+    "name": "自媒体 AI 工作台",
+    "group": "learning",
+    "status": "本地可用 · 创作管理闭环",
+    "summary": "让灵感经过制作、排期与复盘，成为可以持续推进的内容。",
+    "audience": "独立内容创作者",
+    "problem": "素材、稿件与发布计划分散，下一步行动容易丢失。",
+    "value": "把灵感转成项目，以任务和稿件承接创作，再用手动数据快照复盘。",
+    "flow": "记录灵感 → 转为项目 → 编辑稿件与任务 → 安排发布 → 录入数据／导出",
+    "output": "可编辑的项目、稿件、排期和 JSON／Markdown 导出文件",
+    "thinking": "优先打通人工创作管理，AI 只辅助；来源与稿件分开管理，避免没有出处的内容进入成稿。",
+    "limits": "本地存储是真实功能；预置内容是示例。AI 未配置时为 Mock，不会自动发布到社交平台；云端同步需 Supabase。",
+    "service": "creator",
+    "image": "creator-workbench-demo.png",
+    "docs": [
+      [
+        "README 与能力边界",
+        "自媒体AI工作台/README.md"
+      ],
+      [
+        "原始 PRD（Word）",
+        "自媒体AI工作台/《自媒体AI工作台产品需求文档 (PRD)》.docx"
+      ]
+    ]
+  },
+  {
+    "id": "interview",
+    "name": "AI 采访教练",
+    "group": "learning",
+    "status": "可运行流程 · AI 模板演示",
+    "summary": "练习采访中的提问、追问和复盘，而非求职面试。",
+    "audience": "采访初学者与内容创作者",
+    "problem": "缺少低成本反复练习提问与追问的环境。",
+    "value": "通过采访提纲、模拟嘉宾对话与训练复盘衔接下一次练习。",
+    "flow": "设置采访 → 提纲 → 多轮提问 → 复盘 → 历史记录",
+    "output": "提纲、模拟对话与复盘；无密钥时为模板结果",
+    "thinking": "反馈需要对应具体提问证据；必须把真实模型输出和模板兜底区分清楚。",
+    "limits": "GLM 等模型调用未在本轮验证；模板分数不能代表真实采访能力，历史仅在当前浏览器。",
+    "service": "interview",
+    "docs": [
+      [
+        "PRD",
+        "采访模拟/PRD.md"
+      ],
+      [
+        "README",
+        "采访模拟/README.md"
+      ]
+    ]
+  },
+  {
+    "id": "dingdiao",
+    "name": "知音 · 智能定调",
+    "group": "learning",
+    "status": "黑客松概念原型",
+    "summary": "为已经选好的歌曲，建议更适合用户舒适音域的调。",
+    "audience": "K 歌用户",
+    "problem": "歌曲原调与自己的舒适音域不匹配。",
+    "value": "结合舒适音域与歌曲音高时长分布，探索半音建议。",
+    "flow": "测音域 → 选歌 → 建议升降调 → 原型体验",
+    "output": "交互原型、定调算法与竞品研究",
+    "thinking": "把测音域作为定调前置步骤，聚焦“这首歌怎么唱”，而非泛化声音测评。",
+    "limits": "歌曲数据与宿主应用为概念原型，不能标为接入全民 K 歌的正式产品。两个目录为版本副本，合并展示。",
+    "service": "dingdiao",
+    "docs": [
+      [
+        "当前实现与边界",
+        "黑客松/dingdiao-main/dingdiao-main/README.md"
+      ],
+      [
+        "QQ 音乐功能与竞品调研",
+        "黑客松/QQ音乐产品功能盘点与竞品调研.md"
+      ],
+      [
+        "选题与 PRD 评估",
+        "黑客松/TME 高校 AI Hackathon｜9 个 idea 的 PRD 细化与选题评估.md"
+      ],
+      [
+        "MeChoir PRD",
+        "黑客松/PRD-MeChoir.md"
+      ]
+    ]
+  },
+  {
+    "id": "degrees",
+    "name": "AI 级数谱插件",
+    "group": "learning",
+    "status": "C++／AU 实现 · macOS 宿主待验证",
+    "summary": "探索在 Logic Pro 内从音频生成可编辑的级数谱。",
+    "audience": "编曲与和声学习用户",
+    "problem": "从听觉整理调性、和弦和结构成本高。",
+    "value": "本地分析与低置信度提示，保留人工校正。",
+    "flow": "音频 → 分析 → 手改调性／段落 → JSON／文本导出",
+    "output": "引擎源码、测试与 MVP PRD",
+    "thinking": "将分析引擎与插件界面分离；低置信度显式呈现，不能假设自动识别永远正确。",
+    "limits": "当前 Windows 环境不能验证 AU／Logic Pro；MIDI、ChordPro 仅接口，尚未实现。",
+    "docs": [
+      [
+        "README 与验收方法",
+        "级数谱插件/README.md"
+      ],
+      [
+        "MVP PRD（Word）",
+        "级数谱插件/AI级数谱工作台_MVP_PRD.docx"
+      ]
+    ]
+  },
+  {
+    "id": "prd-agent",
+    "name": "PRD 结构化生成脚本",
+    "group": "learning",
+    "status": "本地模板脚本 · 非 AI 产品",
+    "summary": "把结构化需求输入组织成可审阅的 PRD。",
+    "audience": "需要保持文档结构一致的产品同学",
+    "problem": "需求字段、接口与验收约束易遗漏。",
+    "value": "以 JSON 输入和质量门槛输出结构化 Markdown。",
+    "flow": "JSON 输入 → 模板渲染 → Markdown 文档",
+    "output": "PowerShell 脚本、样例输入与 PRD",
+    "thinking": "模板生成能保证结构完整，无法代替用户研究与业务判断。",
+    "limits": "没有网页入口；名称中的 Agent 不代表真实模型推理。本轮不扩建成新产品。",
+    "docs": [
+      [
+        "已有 PRD",
+        "产品PRD生成Agent/PRD.md"
+      ],
+      [
+        "样例输入",
+        "产品PRD生成Agent/sample_input.json"
+      ]
+    ]
+  },
+  {
+    "id": "gesture",
+    "name": "星空粒子手势交互",
+    "group": "learning",
+    "status": "浏览器交互实验 · 摄像头链路未验证",
+    "summary": "探索手势如何改变粒子的聚散与空间反馈。",
+    "audience": "创意交互体验者",
+    "problem": "传统鼠标输入限制空间交互的表达。",
+    "value": "通过 MediaPipe 和 Three.js 探索新的输入映射。",
+    "flow": "摄像头授权 → 手势识别 → 粒子响应",
+    "output": "单页实验代码",
+    "thinking": "输入方式的新颖性需要用可理解性与反馈延迟验证。",
+    "limits": "依赖摄像头权限及外部模型资源；本轮未授权摄像头、未验证识别准确性。",
+    "service": "gesture",
+    "docs": []
+  },
+  {
+    "id": "learning-notes",
+    "name": "产品与 AI 学习笔记",
+    "group": "learning",
+    "status": "学习积累 · 非独立产品",
+    "summary": "从播客、行业资料与知识库中整理问题和判断。",
+    "audience": "个人学习与研究复盘",
+    "problem": "信息消费需要转成能够复用的分析。",
+    "value": "沉淀市场分析、AI 法律边界与分龄教育知识结构。",
+    "flow": "阅读／收听 → 提取问题 → 整理证据 → 形成待验证判断",
+    "output": "学习笔记、资料目录和分龄教育知识库",
+    "thinking": "区分事实、作者观点与自己的推论，避免把学习材料写成业务成果。",
+    "limits": "大模型和机器学习课程资料、研报、面试文档为参考材料，不计作个人落地产品。旧作品集网页是展示原型。",
+    "docs": [
+      [
+        "播客一期学习索引",
+        "小宇宙播客/第一期/README.md"
+      ],
+      [
+        "市场与数据分析笔记",
+        "小宇宙播客/第一期/02-市场与数据分析.md"
+      ],
+      [
+        "AI 法律边界学习索引",
+        "小宇宙播客/第二期-AI侵权与法律边界/README.md"
+      ],
+      [
+        "分龄教育知识点样稿",
+        "儿童分龄教育助手/知识库/分龄知识点库.txt"
+      ],
+      [
+        "旧作品集 PRD",
+        "作品集网页/PRD.md"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宝宝成长相册 · 阅读案例</title>
+  <meta name="description" content="宝宝成长相册阅读案例：把散落的成长照片，收成家人共写的私密时间轴。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wash: "#F3EBE6",
+            paper: "#FAF6F2",
+            ink: "#3A2F2C",
+            mute: "#7A6A64",
+            line: "#E6D9D1",
+            accent: "#A67C73"
+          },
+          fontFamily: {
+            display: ["Fraunces", "Georgia", "serif"],
+            sans: ["Karla", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-wash text-ink font-sans antialiased">
+  <a class="skip" href="#problem">跳到正文</a>
+  <div class="wash-layer" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-40">
+    <div class="glass mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
+      <a class="flex min-h-[44px] items-center gap-2 text-sm font-medium" href="../index.html">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_back</span>
+        作品集
+      </a>
+      <nav class="hidden md:flex" aria-label="章节">
+        <a class="nav-link" href="#problem">问题</a>
+        <a class="nav-link" href="#solution">方案</a>
+        <a class="nav-link" href="#process">流程</a>
+        <a class="nav-link" href="#tradeoffs">取舍</a>
+        <a class="nav-link" href="#results">结果</a>
+      </nav>
+      <a class="cta" href="https://album.47.237.109.221.sslip.io/" target="_blank" rel="noopener">打开相册</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-6xl px-4 pb-16 pt-16 md:px-8 md:pt-24">
+      <p class="reveal label">Case 04 · 宝宝成长相册</p>
+      <h1 class="reveal font-display mt-4 max-w-3xl text-5xl leading-[1.15] md:text-6xl">成长不该散落在群聊里。</h1>
+      <p class="reveal mt-6 max-w-xl text-lg leading-[1.7] text-mute">家人要的是共同写下、共同看见、并且只给家里人看见。相册把照片收成私密时间轴，而不是又一个会外流的朋友圈。</p>
+      <div class="reveal mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <figure class="polaroid rotate-[-3deg]">
+          <div class="photo tone-a"></div>
+          <figcaption>满月</figcaption>
+        </figure>
+        <figure class="polaroid rotate-[2deg] mt-6">
+          <div class="photo tone-b"></div>
+          <figcaption>第一次出门</figcaption>
+        </figure>
+        <figure class="polaroid rotate-[-1deg]">
+          <div class="photo tone-c"></div>
+          <figcaption>8 个月</figcaption>
+        </figure>
+        <figure class="polaroid rotate-[3deg] mt-8 hidden md:block">
+          <div class="photo tone-d"></div>
+          <figcaption>家人留言</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="problem" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Problem</p>
+      <h2 class="reveal font-display mt-3 text-4xl">照片很多，家却没有一本。</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-12">
+        <article class="card reveal md:col-span-8 p-6 md:p-8">
+          <p class="leading-[1.75]">成长记录通常停在微信、云盘和各自手机里。想补一句留言找不到原图，想给爷爷奶奶看又不敢把相册设成公开。权限、日期和「这是谁写的」没有被当成产品对象，只被当成存储附件。</p>
+          <p class="mt-4 leading-[1.75] text-mute">记录发生在碎片时间、常常是一只手抱着孩子。如果流程超过两步，这件事会重新退回群聊。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <p class="label">痛点</p>
+          <ul class="mt-4 space-y-4 text-sm leading-[1.7]">
+            <li>原图外链可被任意打开</li>
+            <li>家庭角色权限含糊</li>
+            <li>年月与月龄对不上</li>
+            <li>上传中断后草稿丢失</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="solution" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Solution</p>
+      <h2 class="reveal font-display mt-3 text-4xl">两步记下，按角色看见。</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-12">
+        <article class="card reveal md:col-span-6 p-6">
+          <span class="material-symbols-outlined text-accent">edit_note</span>
+          <h3 class="mt-4 font-display text-2xl">两步记录</h3>
+          <p class="mt-3 leading-[1.7] text-mute">选择日期、上传照片，留言可选。EXIF 可建议日期。多图排序与删除在同一条记录里完成。</p>
+        </article>
+        <article class="card reveal md:col-span-6 p-6">
+          <span class="material-symbols-outlined text-accent">family_restroom</span>
+          <h3 class="mt-4 font-display text-2xl">一个家庭，一个宝宝</h3>
+          <p class="mt-3 leading-[1.7] text-mute">OWNER 维护资料与邀请，MEMBER 共同记录。移除成员后历史保留，访问立即失效。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">lock</span>
+          <h3 class="mt-3 font-display text-xl">私有对象存储</h3>
+          <p class="mt-2 text-sm leading-[1.7] text-mute">原文件进私有 Bucket，前端只使用短时访问地址。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">calendar_month</span>
+          <h3 class="mt-3 font-display text-xl">两种时间</h3>
+          <p class="mt-2 text-sm leading-[1.7] text-mute">时间倒序浏览，可在年月与月龄之间切换。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">mail</span>
+          <h3 class="mt-3 font-display text-xl">限时邀请</h3>
+          <p class="mt-2 text-sm leading-[1.7] text-mute">链接或邀请码加入，不把家庭变成开放社区。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Process</p>
+      <h2 class="reveal font-display mt-3 text-4xl">从家庭对象到可同步的服务。</h2>
+      <ol class="age-line mt-12">
+        <li class="reveal">
+          <span class="age">建家</span>
+          <div>
+            <h3 class="font-display text-2xl">账号之后先问家庭</h3>
+            <p>登录成功：已有家庭进时间轴；没有家庭则只能创建或凭邀请加入。避免游客误入示例家庭。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="age">记下</span>
+          <div>
+            <h3 class="font-display text-2xl">草稿跟着人走</h3>
+            <p>上传未完成时本地暂存，并提醒网络恢复。抱着孩子的那只手不应该因为刷新而重来。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="age">同看</span>
+          <div>
+            <h3 class="font-display text-2xl">权限先于滤镜</h3>
+            <p>会话 Cookie、密码哈希、家庭成员表和私有存储一起构成「只有家里人能看」。灯箱与轮播建立在这条约束之上。</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="age">上线</span>
+          <div>
+            <h3 class="font-display text-2xl">数据库与照片分开备份</h3>
+            <p>PostgreSQL 保存记录与关系，OSS 保存原图。部署后按日备份数据库；照片需要独立的版本或备份策略。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="tradeoffs" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Trade-offs</p>
+      <h2 class="reveal font-display mt-3 text-4xl">记忆可信，比相册好看更重要。</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <article class="card reveal p-6 md:p-8">
+          <p class="label">做进 MVP</p>
+          <ul class="mt-4 space-y-3 leading-[1.7]">
+            <li>登录、一个家庭、一个宝宝</li>
+            <li>记录、留言、邀请、成员移除</li>
+            <li>移动底栏 / 桌面侧栏</li>
+            <li>类型检查、单测与 E2E</li>
+          </ul>
+        </article>
+        <article class="card reveal p-6 md:p-8">
+          <p class="label">明确不做</p>
+          <ul class="mt-4 space-y-3 leading-[1.7]">
+            <li>社区、点赞、公开广场</li>
+            <li>滤镜、视频、实体纪念册</li>
+            <li>一个家庭多个宝宝</li>
+            <li>自动文案美化——成长记录的可信来自家人原话和原图</li>
+          </ul>
+        </article>
+      </div>
+      <article class="card reveal mt-4 p-6 md:px-8">
+        <p class="hand">若以后加入 AI，也只能是可选的整理，而不能绕过权限，更不能改写家里人写下的句子。</p>
+      </article>
+    </section>
+
+    <section id="results" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Results</p>
+      <h2 class="reveal font-display mt-3 text-4xl">家庭协作被当成真实功能验收。</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card reveal p-6"><p class="font-display text-4xl">2</p><p class="mt-2 text-sm text-mute">步完成一条记录</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">2</p><p class="mt-2 text-sm text-mute">角色：OWNER / MEMBER</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">OSS</p><p class="mt-2 text-sm text-mute">私有存储 + 短时地址</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">HTTPS</p><p class="mt-2 text-sm text-mute">已部署家庭同步入口</p></article>
+      </div>
+      <article class="card reveal mt-4 p-6 md:p-8">
+        <p class="leading-[1.75]">当前版本接入真实账号、家庭权限、PostgreSQL 与阿里云 OSS。完整上传仍依赖对象存储配置；没有 RAM 角色时可以浏览，但不能把示例家庭当成已验证的权限隔离。数据库备份保留 14 天，与照片备份相互独立。</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4 py-16 md:px-8">
+    <div class="border-t border-line pt-10">
+      <p class="font-display text-3xl">留给以后翻看的人，而不是算法。</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="cta" href="https://album.47.237.109.221.sslip.io/" target="_blank" rel="noopener">在线相册</a>
+        <a class="ghost" href="../index.html">返回作品集</a>
+        <a class="ghost" href="mailto:zjqi106427@163.com">zjqi106427@163.com</a>
+      </div>
+      <p class="mt-10 text-sm text-mute">© 2026 张嘉琪 · 宝宝成长相册阅读案例。谢谢愿意一起记下来的家人。</p>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

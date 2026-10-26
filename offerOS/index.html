@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfferOS · 阅读案例</title>
+  <meta name="description" content="OfferOS 阅读案例：把任意来源的岗位，变成可解释的投递前决策。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wash: "#E6ECF1",
+            paper: "#F3F6F8",
+            ink: "#2A3640",
+            mute: "#5C6B76",
+            line: "#D4DDE4",
+            accent: "#4A6274",
+            stamp: "#6A7F8C"
+          },
+          fontFamily: {
+            display: ['"Source Serif 4"', "Georgia", "serif"],
+            sans: ['"IBM Plex Sans"', "system-ui", "sans-serif"]
+          },
+          boxShadow: {
+            soft: "0 4px 12px rgba(42, 54, 64, 0.08)",
+            hover: "0 8px 18px rgba(42, 54, 64, 0.12)"
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-wash text-ink font-sans antialiased">
+  <a class="skip" href="#problem">跳到正文</a>
+  <div class="wash-layer" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-40">
+    <div class="glass mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
+      <a class="flex min-h-[44px] items-center gap-2 text-sm font-medium tracking-wide" href="../index.html">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_back</span>
+        作品集
+      </a>
+      <nav class="hidden items-center gap-1 md:flex" aria-label="章节">
+        <a class="nav-link" href="#problem">问题</a>
+        <a class="nav-link" href="#solution">方案</a>
+        <a class="nav-link" href="#process">流程</a>
+        <a class="nav-link" href="#tradeoffs">取舍</a>
+        <a class="nav-link" href="#results">结果</a>
+      </nav>
+      <a class="cta" href="http://47.237.109.221/" target="_blank" rel="noopener">打开产品</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-6xl px-4 pb-16 pt-16 md:px-8 md:pb-24 md:pt-24">
+      <p class="reveal label">Case 01 · OfferOS</p>
+      <h1 class="reveal font-display mt-4 max-w-3xl text-4xl font-medium leading-[1.2] md:text-6xl">
+        投之前，先看清楚这份工作值不值得投。
+      </h1>
+      <p class="reveal mt-6 max-w-xl text-lg leading-[1.7] text-mute">
+        招聘平台负责找岗和开聊。OfferOS 停在更前面：把任意来源的岗位，整理成「该不该投、差在哪、怎么面」的可解释建议。
+      </p>
+      <div class="reveal mt-10 flex flex-wrap gap-3">
+        <a class="cta" href="http://47.237.109.221/" target="_blank" rel="noopener">访问在线 Demo</a>
+        <a class="ghost" href="#problem">阅读完整案例</a>
+      </div>
+
+      <div class="bento mt-16 grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4">
+        <article class="card reveal md:col-span-7 p-6 md:p-8">
+          <p class="label">顾问立场</p>
+          <p class="font-display mt-3 text-2xl">保 · 稳 · 冲 · 不建议投</p>
+          <p class="mt-4 leading-[1.7] text-mute">敢于劝退，是产品与招聘平台最清楚的分界。分数用来排序和解释，不是录用概率。</p>
+        </article>
+        <article class="card reveal md:col-span-5 p-6">
+          <p class="label">模型只看职业标签</p>
+          <ul class="mt-4 space-y-3 text-sm leading-[1.7]">
+            <li class="flex gap-2"><span class="material-symbols-outlined text-[18px] text-accent">lock</span>姓名、学校、项目原文不出站</li>
+            <li class="flex gap-2"><span class="material-symbols-outlined text-[18px] text-accent">link</span>岗位必须核验真实来源页</li>
+            <li class="flex gap-2"><span class="material-symbols-outlined text-[18px] text-accent">description</span>结论绑回简历行号</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="problem" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Problem</p>
+      <h2 class="reveal font-display mt-3 text-3xl md:text-4xl">匹配分很热闹，准备却对不上。</h2>
+      <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-12">
+        <article class="card reveal md:col-span-8 p-6 md:p-8">
+          <p class="leading-[1.75]">求职者并不缺岗位流。缺的是投递前的判断：这份 JD 是不是真的在招、和自己哪一段经历对得上、硬门槛有没有卡住、今晚该深挖哪两个岗。平台推荐偏开聊，简历润色偏措辞，两者都很难认真说「不建议投」。</p>
+          <p class="mt-4 leading-[1.75] text-mute">现状是截图、收藏夹和表格各管一段。分数来了却没有证据，报告写了却没法对着原文准备面试。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <p class="label">痛点</p>
+          <ol class="mt-4 space-y-4">
+            <li><strong class="font-medium">黑盒分</strong><p class="text-sm text-mute">看不到依据，无法决定投或不投。</p></li>
+            <li><strong class="font-medium">假岗与过期页</strong><p class="text-sm text-mute">搜索摘要不等于在招职位。</p></li>
+            <li><strong class="font-medium">报告与行动脱节</strong><p class="text-sm text-mute">建议改简历，却补造了没写过的经历。</p></li>
+          </ol>
+        </article>
+        <article class="card reveal md:col-span-12 p-6 md:px-8">
+          <p class="hand">「岗还是在平台上看；投之前，希望先有一个不站在平台那边的顾问。」</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="solution" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Solution</p>
+      <h2 class="reveal font-display mt-3 text-3xl md:text-4xl">投递前的专属求职顾问。</h2>
+      <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-12">
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">folder_open</span>
+          <h3 class="mt-4 font-display text-xl">本地档案，不补能力</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">PDF / Word / Markdown 按模块归档。每条事实保留原文与行号。没写过的经历按未具备处理。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">travel_explore</span>
+          <h3 class="mt-4 font-display text-xl">按需发现，核验再上榜</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">不维护岗位库存。联网搜索只认真实来源页及一跳详情，关闭岗与空壳页排除。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <span class="material-symbols-outlined text-accent">account_tree</span>
+          <h3 class="mt-4 font-display text-xl">先筛后深</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">列表用规则快速分排序；点进岗位才生成长报告、公司背景和面试准备。</p>
+        </article>
+        <article class="card reveal md:col-span-7 p-6 md:p-8">
+          <p class="label">四维匹配</p>
+          <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div><p class="font-display text-3xl">35%</p><p class="mt-1 text-sm text-mute">知识技能</p></div>
+            <div><p class="font-display text-3xl">25%</p><p class="mt-1 text-sm text-mute">工作经验</p></div>
+            <div><p class="font-display text-3xl">25%</p><p class="mt-1 text-sm text-mute">核心能力</p></div>
+            <div><p class="font-display text-3xl">15%</p><p class="mt-1 text-sm text-mute">个性特质</p></div>
+          </div>
+          <p class="mt-6 text-sm leading-[1.7] text-mute">硬门槛只警示，不篡改原分和保稳冲档位。</p>
+        </article>
+        <article class="card reveal md:col-span-5 p-6">
+          <p class="label">Agent 分工</p>
+          <p class="mt-4 leading-[1.7]">发现、JD 解析、详细判分、行动报告、公司背调走固定编排。快模型处理解析，长报告用更稳的生成；失败时页面标明规则兜底，不静默编造。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Process</p>
+      <h2 class="reveal font-display mt-3 text-3xl md:text-4xl">从简历到行动的一条链。</h2>
+      <ol class="timeline mt-12">
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">01 归档</p>
+          <h3 class="font-display text-xl">本地提取证据</h3>
+          <p>上传后按教育、工作、项目等模块落库。解析与证据绑定不调用模型，避免把隐私原文送出。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">02 发现</p>
+          <h3 class="font-display text-xl">最多六路搜索</h3>
+          <p>招聘平台、企业站、技能方向与官网并行。默认目标 24 个核验通过的岗位，候选预算 96，并发 4。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">03 排序</p>
+          <h3 class="font-display text-xl">规则快速分</h3>
+          <p>已识别技能覆盖 70 分，岗位方向 30 分；硬门槛不满足时最高 49。用于今晚多评少深，不是录用预测。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">04 深报</p>
+          <h3 class="font-display text-xl">点击后再核验</h3>
+          <p>重新抓取详情，生成四维判断、公司背景、简历侧经历题和职位侧追问。原文证据在本地补回。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="tradeoffs" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Trade-offs</p>
+      <h2 class="reveal font-display mt-3 text-3xl md:text-4xl">选择留下什么，比加上什么更难。</h2>
+      <div class="mt-10 overflow-hidden rounded-[20px] border border-line">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="reveal border-b border-line p-6 md:border-b-0 md:border-r md:p-8">
+            <p class="label">做过的选择</p>
+            <ul class="mt-4 space-y-4 leading-[1.7]">
+              <li>不做岗位大盘，做投前顾问层。</li>
+              <li>列表分用规则，长报告才用模型，避免每次搜索都等深报告。</li>
+              <li>硬门槛警示而不改分，避免「卡学历却看起来很匹配」。</li>
+              <li>面试准备不写改简历建议，防止补造未写经历。</li>
+            </ul>
+          </div>
+          <div class="reveal bg-paper p-6 md:p-8">
+            <p class="label">明确放弃</p>
+            <ul class="mt-4 space-y-4 leading-[1.7]">
+              <li>不代投、不站内开聊，激励不和平台抢互动。</li>
+              <li>搜索摘要不拿来补造 JD；宁可见到空页。</li>
+              <li>公开 Demo 用虚构人物，真实简历进入独立访客空间。</li>
+              <li>分数与列表可能不一致，并在产品里说清楚原因。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Results</p>
+      <h2 class="reveal font-display mt-3 text-3xl md:text-4xl">可核验的闭环，而不是更长的生成。</h2>
+      <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card data reveal p-6">
+          <p class="font-display text-4xl">24</p>
+          <p class="mt-2 text-sm text-mute">默认一次核验通过的岗位目标</p>
+        </article>
+        <article class="card data reveal p-6">
+          <p class="font-display text-4xl">42</p>
+          <p class="mt-2 text-sm text-mute">扩展搜索实测核验网页数（同轮 24 岗通过）</p>
+        </article>
+        <article class="card data reveal p-6">
+          <p class="font-display text-4xl">49</p>
+          <p class="mt-2 text-sm text-mute">虚构样例中可回原文的事实条数</p>
+        </article>
+        <article class="card data reveal p-6">
+          <p class="font-display text-4xl">0</p>
+          <p class="mt-2 text-sm text-mute">向模型发送的姓名、学校与项目原文</p>
+        </article>
+      </div>
+      <article class="card reveal mt-4 p-6 md:p-8">
+        <p class="leading-[1.75]">产品已部署公开 Demo 与管理端。管理端跟踪漏斗、质量与用量。公开入口默认进入虚构人物，避免把演示数据写进真实档案。当前仍以 HTTP 演示；正式收集真实简历前需要 HTTPS 与更完整的账户保护——这是已知边界，不是已验收能力。</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4 py-16 md:px-8">
+    <div class="border-t border-line pt-10">
+      <p class="font-display text-2xl">把判断权留在人这边。</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="cta" href="http://47.237.109.221/" target="_blank" rel="noopener">产品 Demo</a>
+        <a class="ghost" href="../index.html">返回作品集</a>
+        <a class="ghost" href="mailto:zjqi106427@163.com">zjqi106427@163.com</a>
+      </div>
+      <p class="mt-10 text-sm text-mute">© 2026 张嘉琪 · OfferOS 阅读案例。感谢千问与所有被认真对待的求职夜晚。</p>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

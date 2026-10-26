@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>桌面便签板 · 阅读案例</title>
+  <meta name="description" content="桌面便签板阅读案例：把瞬间想到的事，留在每天都会看见的桌面上。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wash: "#F1ECE6",
+            paper: "#FAF7F2",
+            ink: "#302D38",
+            mute: "#6F6A73",
+            line: "#E2DBD2",
+            accent: "#6B6570"
+          },
+          fontFamily: {
+            display: ['"Instrument Serif"', "Georgia", "serif"],
+            sans: ["Manrope", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-wash text-ink font-sans antialiased">
+  <a class="skip" href="#problem">跳到正文</a>
+  <div class="wash-layer" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-40">
+    <div class="glass mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
+      <a class="flex min-h-[44px] items-center gap-2 text-sm font-medium" href="../index.html">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_back</span>
+        作品集
+      </a>
+      <nav class="hidden md:flex" aria-label="章节">
+        <a class="nav-link" href="#problem">问题</a>
+        <a class="nav-link" href="#solution">方案</a>
+        <a class="nav-link" href="#process">流程</a>
+        <a class="nav-link" href="#tradeoffs">取舍</a>
+        <a class="nav-link" href="#results">结果</a>
+      </nav>
+      <a class="cta" href="https://github.com/Merry-Q/desktop-sticky-board/releases" target="_blank" rel="noopener">下载应用</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto max-w-6xl px-4 pb-8 pt-16 md:px-8 md:pt-24">
+      <div class="flex flex-col items-start gap-10 md:flex-row md:items-center md:justify-between">
+        <div class="max-w-xl">
+          <p class="reveal label">Case 03 · 桌面便签板</p>
+          <h1 class="reveal font-display mt-4 text-5xl leading-[1.15] md:text-6xl">念头出现的时候，桌面就在。</h1>
+          <p class="reveal mt-6 text-lg leading-[1.7] text-mute">打开大型笔记会打断手头的事。这个 Windows 应用把记录收成一颗可拖动的日期球：悬停展开，写完继续工作。</p>
+          <div class="reveal mt-8 flex flex-wrap gap-3">
+            <a class="cta" href="https://github.com/Merry-Q/desktop-sticky-board/releases" target="_blank" rel="noopener">获取便携版</a>
+            <a class="ghost" href="#problem">阅读案例</a>
+          </div>
+        </div>
+        <div class="orb-wrap reveal" aria-hidden="true">
+          <div class="orb">
+            <span class="orb-date">10.26</span>
+            <span class="orb-week">星期一</span>
+          </div>
+          <div class="mini-panel">
+            <p>待办</p>
+            <p class="text-mute">待定</p>
+            <p class="text-mute">灵感</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Problem</p>
+      <h2 class="reveal font-display mt-3 text-4xl">不是记不住，是记下的成本太高。</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <article class="card reveal p-6">
+          <span class="material-symbols-outlined text-accent">tab</span>
+          <h3 class="mt-4 font-display text-2xl">切换即中断</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">为了一句话打开笔记软件，等同步、选笔记本、找文件夹，念头已经散了。</p>
+        </article>
+        <article class="card reveal p-6">
+          <span class="material-symbols-outlined text-accent">category</span>
+          <h3 class="mt-4 font-display text-2xl">事不是一种形状</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">有的要做，有的还没想清楚，有的只是句子。塞进同一个待办列表，会制造假紧急。</p>
+        </article>
+        <article class="card reveal p-6">
+          <span class="material-symbols-outlined text-accent">cloud_off</span>
+          <h3 class="mt-4 font-display text-2xl">云同步不是前提</h3>
+          <p class="mt-3 text-sm leading-[1.7] text-mute">碎片记录如果先问登录，产品已经输了。它应该像桌面本身一样本地、安静。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="solution" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Solution</p>
+      <h2 class="reveal font-display mt-3 text-4xl">三格分类，一层玻璃。</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-12">
+        <article class="card reveal md:col-span-8 p-6 md:p-8">
+          <div class="tabs" role="tablist" aria-label="分区示意">
+            <button class="tab is-active" type="button" data-tab="todo">待办</button>
+            <button class="tab" type="button" data-tab="later">待定</button>
+            <button class="tab" type="button" data-tab="idea">灵感</button>
+          </div>
+          <p id="tab-copy" class="mt-6 leading-[1.75]">今天必须推进的事。短句即可，完成后划掉，不升级成项目管理。</p>
+        </article>
+        <article class="card reveal md:col-span-4 p-6">
+          <p class="label">驻留方式</p>
+          <ul class="mt-4 space-y-3 text-sm leading-[1.7]">
+            <li>日期悬浮球可拖动</li>
+            <li>悬停展开，可钉住面板</li>
+            <li>展开时取样桌面做毛玻璃</li>
+            <li>单实例，避免两块板抢桌面</li>
+          </ul>
+        </article>
+        <article class="card reveal md:col-span-12 p-6 md:px-8">
+          <p class="hand">它不是又一个笔记库。它是你每天都会看见的那一层。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Process</p>
+      <h2 class="reveal font-display mt-3 text-4xl">从原型到可以双击打开。</h2>
+      <ol class="timeline mt-12">
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">01</p>
+          <h3 class="font-display text-2xl">先写清打断成本</h3>
+          <p>主路径必须短到几乎无教学：看见球、展开、输入、贴回桌面。安装本身也算流失，所以最终做成便携 exe。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">02</p>
+          <h3 class="font-display text-2xl">用三区拆任务</h3>
+          <p>待办、待定、灵感对应三种心理状态，而不是三种标签颜色。分类发生在写下的瞬间，不要求事后整理。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">03</p>
+          <h3 class="font-display text-2xl">从脚本到 Electron</h3>
+          <p>早期 Python 原型只验证驻留。正式版用 Electron 做窗口、IPC 与打包，毛玻璃借助本机截取桌面区域。</p>
+        </li>
+        <li class="reveal">
+          <span class="dot"></span>
+          <p class="label">04</p>
+          <h3 class="font-display text-2xl">本地一纸保存</h3>
+          <p>内容写入 %APPDATA%\桌面便签板\board.json。备份就是复制这个文件。不把便签送进仓库或云端。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="tradeoffs" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Trade-offs</p>
+      <h2 class="reveal font-display mt-3 text-4xl">少做一个功能，是为了少打断一次。</h2>
+      <div class="mt-10 overflow-hidden rounded-[20px] border border-line md:grid md:grid-cols-2">
+        <div class="reveal border-b border-line p-6 md:border-b-0 md:border-r md:p-8">
+          <p class="label">要</p>
+          <ul class="mt-4 space-y-4 leading-[1.7]">
+            <li>热区与按钮不小于 44px，方便点按。</li>
+            <li>多行灵感用独立编辑，避免 Enter 把没写完的句子提前提交。</li>
+            <li>毛玻璃只在展开时取样，打开期间不实时刷新，减少占用。</li>
+            <li>只做 Windows 桌面。网页入口会假装一种它不是的产品。</li>
+          </ul>
+        </div>
+        <div class="reveal bg-paper p-6 md:p-8">
+          <p class="label">不要</p>
+          <ul class="mt-4 space-y-4 leading-[1.7]">
+            <li>不做账号、协作和云同步。</li>
+            <li>不把 AI 整理设成写下的前提。模型可以以后可选，不能挡住那一笔。</li>
+            <li>不做文件夹树、标签系统和全文搜索的重型结构。</li>
+            <li>不把 Python 原型继续当正式应用维护。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="mx-auto max-w-6xl px-4 py-16 md:px-8 md:py-24">
+      <p class="reveal label">The Results</p>
+      <h2 class="reveal font-display mt-3 text-4xl">可以放在桌面上的结果。</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card reveal p-6"><p class="font-display text-4xl">3</p><p class="mt-2 text-sm text-mute">待办 / 待定 / 灵感</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">1</p><p class="mt-2 text-sm text-mute">实例，一块板</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">0</p><p class="mt-2 text-sm text-mute">安装步骤，便携运行</p></article>
+        <article class="card reveal p-6"><p class="font-display text-4xl">JSON</p><p class="mt-2 text-sm text-mute">本机一份文件即可迁移</p></article>
+      </div>
+      <article class="card reveal mt-4 p-6 md:p-8">
+        <p class="leading-[1.75]">源码与可执行文件已发布。这是原生桌面应用，不是网页演示。若要在本机验证：进入项目的 app 目录执行 npm start。本案例页只讲述决策，不冒充悬浮窗。</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4 py-16 md:px-8">
+    <div class="border-t border-line pt-10">
+      <p class="font-display text-3xl">写完就回到你刚才在做的事。</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="cta" href="https://github.com/Merry-Q/desktop-sticky-board/releases" target="_blank" rel="noopener">Releases</a>
+        <a class="ghost" href="../index.html">返回作品集</a>
+        <a class="ghost" href="mailto:zjqi106427@163.com">zjqi106427@163.com</a>
+      </div>
+      <p class="mt-10 text-sm text-mute">© 2026 张嘉琪 · 桌面便签板阅读案例。感谢那些被打断过、又决定少打断别人的人。</p>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

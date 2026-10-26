@@ -1,0 +1,163 @@
+{
+  "overview": {
+    "goal": "以证据驱动的PRD生成，降低反复确认成本",
+    "kpis": ["章节完整度≥95%", "引用可追溯率100%", "评审通过率≥90%"],
+    "successCriteria": ["形成可执行验收标准", "范围外事项明确且有原因"]
+  },
+  "background": {
+    "context": "当前PRD存在论据不足、范围蔓延、阅读成本高的问题",
+    "painPoints": ["决策拍脑袋", "评审争论点多", "跨页查找困难"],
+    "stakeholders": ["产品", "研发", "测试", "运营"]
+  },
+  "scope": {
+    "roles": ["C端用户"],
+    "scenes": ["App端"],
+    "constraints": "中文版，合规遵循本地法规",
+    "outOfScope": [
+      { "item": "手机号一键登录", "reason": "技术成本较高，MVP聚焦微信登录" }
+    ],
+    "futurePlan": "后续支持多端统一与更多登录方式"
+  },
+  "competitors": [
+    {
+      "name": "竞品A",
+      "links": [
+        { "url": "https://example.com/productA/feature", "date": "2026-02-20" }
+      ],
+      "interactionSteps": { "ours": 2, "theirs": 3, "summary": "我方减少一次层级切换" },
+      "exceptionHandling": { "evidence": "https://example.com/productA/error-demo", "summary": "我方提供重试与离线队列" },
+      "businessModel": { "evidence": "https://example.com/productA/pricing", "summary": "我方MVP阶段不收费，设配额" }
+    }
+  ],
+  "strategy": "交互对标A，数据结构采B，降低迁移成本并优化异常体验",
+  "requirements": {
+    "must": [
+      { "title": "微信登录", "acceptance": "Given用户在登录页 When点击微信登录 Then登录成功并回到首页" }
+    ],
+    "should": [
+      { "title": "错误提示与重试", "acceptance": "Given网络异常 When登录失败 Then展示重试与反馈入口" }
+    ],
+    "could": [],
+    "wont": [{ "title": "手机号一键登录", "acceptance": "范围外不验收" }]
+  },
+  "process": {
+    "rolesCount": 2,
+    "branchCount": 3,
+    "useCases": [
+      { "name": "用户登录", "given": "用户在登录页", "when": "点击微信登录", "then": "登录成功并跳转首页", "errorAnchor": "#sec-12" }
+    ]
+  },
+  "data": {
+    "fields": [
+      { "name": "user_id", "type": "string", "length": "64", "required": "必填", "default": "-", "desc": "用户唯一标识" }
+    ],
+    "apis": [
+      { "name": "login", "method": "POST", "in": "{\"code\":\"string\"}", "out": "{\"token\":\"string\"}", "status": "200", "desc": "微信登录接口" }
+    ],
+    "permissions": [
+      { "role": "用户", "resource": "账号", "action": "登录", "allow": "允许", "audit": "是", "desc": "登录行为记录审计" }
+    ]
+  },
+  "security": {
+    "classification": "敏感数据分类：账号、令牌",
+    "masking": "令牌不写日志，账号脱敏",
+    "audit": "登录成功/失败记录审计",
+    "regulations": [
+      { "name": "OWASP ASVS", "url": "https://owasp.org/www-project-application-security-verification-standard/", "date": "2026-03-01" }
+    ]
+  },
+  "risks": [
+    { "name": "第三方接口不稳定", "mitigation": "退避重试与熔断" }
+  ],
+  "dependencies": [
+    { "name": "微信开放平台", "prereq": "申请与配置完成" }
+  ],
+  "milestones": [
+    { "name": "MVP发布", "deliverables": ["登录流程", "异常处理", "错误码列表"] }
+  ],
+  "acceptance": [
+    "登录成功率≥99%",
+    "网络异常时重试策略生效"
+  ],
+  "errorCodes": [
+    { "code": "E001", "scene": "网络超时", "message": "网络异常，请重试", "strategy": "退避重试", "note": "-" }
+  ],
+  "references": [
+    { "title": "竞品A登录页面", "url": "https://example.com/productA/login", "date": "2026-02-20" }
+  ],
+  "appendix": {
+    "terms": "统一术语：登录、令牌、异常",
+    "followups": ["补充竞品B与C的具体页面链接与日期", "补充小程序端范围界定"]
+  }
+  ,
+  "titles": {
+    "toc": "目录",
+    "sec1": "概述与迭代目标",
+    "sec2": "背景与问题陈述",
+    "sec3": "用户与场景界定",
+    "sec4": "竞品对标与依据规范",
+    "sec5": "需求列表（MoSCoW分级）",
+    "sec6": "业务流程与用例",
+    "sec7": "数据与接口",
+    "sec8": "安全与合规",
+    "sec9": "风险与依赖",
+    "sec10": "本期不做/后续规划",
+    "sec11": "里程碑与验收标准",
+    "sec12": "错误码列表",
+    "sec13": "附录（术语/引用/追加问题）",
+    "subGoal": "一句话目标",
+    "subKPI": "KPI",
+    "subSuccess": "成功标准/不可接受失败条件",
+    "subBg": "业务背景",
+    "subPain": "痛点/机会",
+    "subStake": "利益相关方",
+    "subRoles": "用户角色（示例：仅C端，排除B端）",
+    "subScenes": "适用场景（示例：仅App端，排除小程序端）",
+    "subConstraints": "区域/语言/合规约束",
+    "compSources": "对比对象与来源",
+    "compInteraction": "交互路径对比（步数/层级）",
+    "compException": "异常处理对比（断网/加载失败等）",
+    "compBiz": "商业模式/限制条件对比（收费/权限/准入）",
+    "compStrategy": "我方策略",
+    "moscowMust": "Must",
+    "moscowShould": "Should",
+    "moscowCould": "Could",
+    "moscowWont": "Won’t",
+    "outScopeTitle": "范围外事项（原因见第10章）",
+    "flowOverview": "总览流程（泳道图，含开始/结束与异常分支）",
+    "useCases": "关键用例（可跳转错误码：见第12章）",
+    "dataItems": "数据项与治理",
+    "apiContracts": "API契约/事件",
+    "permMatrix": "权限与分层矩阵",
+    "dataClassMask": "数据分类与脱敏",
+    "audit": "权限与审计",
+    "regRefs": "法规要求与参考（具体页面链接+日期）",
+    "risks": "技术/业务风险与缓解策略",
+    "deps": "外部依赖与前置条件",
+    "excluded": "明确排除清单（逐项+原因）",
+    "futurePlan": "后续规划与进入条件",
+    "milestones": "里程碑与交付物",
+    "acceptanceTitle": "验收标准（指标/测试用例）",
+    "terms": "术语表",
+    "references": "引用与参考（具体页面/录屏，含日期）",
+    "followups": "追加问题清单"
+  },
+  "labels": {
+    "fieldsHeaders": ["字段名","类型","长度限制","必填/选填","默认值","说明"],
+    "apiHeaders": ["接口","方法","入参","出参","状态码","说明"],
+    "permHeaders": ["角色","资源","动作","允许/拒绝","审计","说明"],
+    "errorHeaders": ["错误码","场景","提示文案","处理策略","备注"],
+    "acceptance": "验收",
+    "summary": "结论先行",
+    "evidence": "证据",
+    "strategy": "我方策略",
+    "dateLabel": "日期",
+    "reason": "原因",
+    "deliverables": "交付物",
+    "diagramPlaceholder": "待补充：流程图",
+    "useCasePrefix": "用例",
+    "errorAnchor": "异常锚点",
+    "mitigation": "缓解",
+    "prereq": "前置"
+  }
+}

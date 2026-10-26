@@ -1,0 +1,45 @@
+[
+  {
+    "id": "home",
+    "dir": "personal-website",
+    "kind": "vite",
+    "port": 4310
+  },
+  {
+    "id": "creator",
+    "dir": "自媒体AI工作台",
+    "kind": "next",
+    "port": 4312
+  },
+  {
+    "id": "offeros",
+    "dir": "offerOS",
+    "kind": "fastapi",
+    "module": "server.main:app",
+    "port": 4316
+  },
+  {
+    "id": "interview",
+    "dir": "采访模拟",
+    "kind": "next",
+    "port": 4317
+  },
+  {
+    "id": "baby",
+    "dir": "宝宝相册",
+    "kind": "next",
+    "port": 4318
+  },
+  {
+    "id": "dingdiao",
+    "dir": "黑客松/dingdiao-main/dingdiao-main/site/dist",
+    "kind": "static",
+    "port": 4322
+  },
+  {
+    "id": "gesture",
+    "dir": "Gemini星空粒子手势识别",
+    "kind": "static",
+    "port": 4323
+  }
+]
